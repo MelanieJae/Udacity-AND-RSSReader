@@ -1,0 +1,8 @@
+<resources>
+    <!-- detail -->
+    <dimen name="detail_photo_height">224dp</dimen>
+    <dimen name="fab_width">56dp</dimen>
+    <dimen name="fab_height">56dp</dimen>
+    <dimen name="detail_inner_horiz_right_margin">72dp</dimen>
+
+</resources>
