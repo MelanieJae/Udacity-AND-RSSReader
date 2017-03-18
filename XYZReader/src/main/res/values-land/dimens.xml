@@ -4,5 +4,6 @@
     <dimen name="fab_width">56dp</dimen>
     <dimen name="fab_height">56dp</dimen>
     <dimen name="detail_inner_horiz_right_margin">72dp</dimen>
+    <dimen name="article_list_text_size">18sp</dimen>
 
 </resources>
