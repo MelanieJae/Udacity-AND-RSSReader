@@ -22,7 +22,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -48,7 +47,6 @@ public class ArticleDetailFragment extends Fragment implements
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private ObservableScrollView mScrollView;
-    private FrameLayout mDrawInsetsFrameLayout;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private ColorDrawable mStatusBarColorDrawable;
     private ImageButton fab;
@@ -59,6 +57,7 @@ public class ArticleDetailFragment extends Fragment implements
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
+    private ImageButton mUpButton;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -193,7 +192,6 @@ public class ArticleDetailFragment extends Fragment implements
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 titleView.setTextColor(p.getDarkVibrantColor(12));
                                 bylineView.setTextColor(p.getDarkVibrantColor(12));
-                                fab.setBackgroundColor(p.getVibrantColor(12));
                                 mPhotoView.setBackground
                                         (new BitmapDrawable(getResources(), bitmap));
                                 mRootView.findViewById(R.id.meta_bar)

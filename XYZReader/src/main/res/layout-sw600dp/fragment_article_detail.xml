@@ -15,24 +15,24 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/detail_appbar_height">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/detail_appbar_height"
-                    android:elevation="@dimen/toolbar_elevation">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_appbar_height"
+                android:elevation="@dimen/toolbar_elevation">
 
-                    <ImageButton android:id="@+id/share_fab"
-                        android:stateListAnimator="@drawable/fab_state_list_anim"
-                        android:background="@drawable/add_fab_background"
-                        android:layout_gravity="bottom|end"
-                        android:layout_marginRight="@dimen/fab_margin_horizontal"
-                        android:layout_marginBottom="@dimen/fab_margin_vertical"
-                        android:layout_width="@dimen/fab_width"
-                        android:layout_height="@dimen/fab_height"
-                        android:src="@drawable/ic_share"
-                        android:elevation="@dimen/fab_elevation"
-                        android:contentDescription="@string/action_share_cd" />
-                </android.support.v7.widget.Toolbar>
+                <ImageButton android:id="@+id/share_fab"
+                    android:stateListAnimator="@drawable/fab_state_list_anim"
+                    android:background="@drawable/add_fab_background"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginRight="@dimen/fab_margin_horizontal"
+                    android:layout_marginBottom="@dimen/fab_margin_vertical"
+                    android:layout_width="@dimen/fab_width"
+                    android:layout_height="@dimen/fab_height"
+                    android:src="@drawable/ic_share_white_36pt_2x"
+                    android:elevation="@dimen/fab_elevation"
+                    android:contentDescription="@string/action_share_cd" />
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
         <com.example.xyzreader.ui.ObservableScrollView

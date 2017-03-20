@@ -11,11 +11,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.text.format.DateUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -114,7 +113,6 @@ public class ArticleListActivity extends AppCompatActivity
 
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
         private Cursor mCursor;
-
         public Adapter(Cursor cursor) {
             mCursor = cursor;
         }
@@ -142,18 +140,9 @@ public class ArticleListActivity extends AppCompatActivity
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             mCursor.moveToPosition(position);
-            holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
-            holder.subtitleView.setText(
-                    DateUtils.getRelativeTimeSpanString(
-                            mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
-                            System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-                            DateUtils.FORMAT_ABBREV_ALL).toString()
-                            + " by "
-                            + mCursor.getString(ArticleLoader.Query.AUTHOR));
-
-            holder.thumbnailView.setImageUrl(
-                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
-                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
+                holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+                holder.thumbnailView.setImageUrl(mCursor.getString(ArticleLoader.Query.THUMB_URL),
+                        ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
             holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
@@ -166,30 +155,26 @@ public class ArticleListActivity extends AppCompatActivity
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public DynamicHeightNetworkImageView thumbnailView;
         public TextView titleView;
-        public TextView subtitleView;
 
         public ViewHolder(View view) {
             super(view);
             thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
             titleView = (TextView) view.findViewById(R.id.article_title);
-            subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
         }
     }
 
     private RecyclerView.LayoutManager getLayoutManager(int orientation) {
-        int columnCount = 0;
-        columnCount = getResources().getInteger(R.integer.list_column_count);
-        switch (orientation) {
-            case Configuration.ORIENTATION_PORTRAIT:
-                RecyclerView.LayoutManager lm =
-                        new GridLayoutManager(ArticleListActivity.this, columnCount);
-                return lm;
-            case Configuration.ORIENTATION_LANDSCAPE:
-                StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-                mRecyclerView.setLayoutManager(sglm);
-                return sglm;
-            default:
-                return null;
+        int columnCount = getResources().getInteger(R.integer.list_item_column_count);
+        if (orientation == Configuration.ORIENTATION_PORTRAIT
+                && getResources().getConfiguration().screenWidthDp < 500) {
+            RecyclerView.LayoutManager lm =
+                    new LinearLayoutManager(ArticleListActivity.this);
+            return lm;
+        } else {
+            StaggeredGridLayoutManager sglm
+                    = new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
+            mRecyclerView.setLayoutManager(sglm);
+            return sglm;
         }
     }
 }
