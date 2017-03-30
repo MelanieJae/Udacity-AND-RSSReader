@@ -5,7 +5,7 @@ https://www.udacity.com/api/nodes/4292653440/supplemental_media/xyzreaderzip/dow
 
 # App Notes
 
-This app contains two screens. The main screen shows cards linking to news stories obtained from a JSON data file. Upon clicking on any of the cards you arrive at the detail screen with the media content. The project is designed to be easily read and enjoyed on either a phone or tablet in porttrain or landscape mode with customized layouts based on screen width breakpoints.
+This app contains two screens. The main screen shows cards linking to news stories obtained from a JSON data file. Upon clicking on any of the cards you arrive at the detail screen with the media content. The project is designed to be easily read and enjoyed on either a phone or tablet in portrait or landscape mode with customized layouts based on screen width breakpoints.
 
 # External Libraries:
 
