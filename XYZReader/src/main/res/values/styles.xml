@@ -14,16 +14,10 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources>
-    <style name="Theme.Bacon" parent="Theme.AppCompat.Light.NoActionBar"></style>
-
-    <!--<style name="Theme.Bacon.Detail">-->
-        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
-    <!--</style>-->
-    <!-- main screen toolbar -->
-    <style name="MainToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:background">@color/primary</item>
+    <style name="Theme.Bacon" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
     </style>
-
 </resources>

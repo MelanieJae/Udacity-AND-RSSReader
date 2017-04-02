@@ -14,7 +14,7 @@
         android:layout_height="@dimen/nav_up_btn_height"
         android:background="?selectableItemBackgroundBorderless"
         android:contentDescription="@string/up_cd"
-        android:layout_marginTop="@dimen/nav_up_btn_top_margin"
+        android:layout_marginTop="@dimen/detail_body_vert_margin"
         android:layout_marginLeft="8dp"
         android:src="@drawable/ic_arrow_back" />
 </FrameLayout>

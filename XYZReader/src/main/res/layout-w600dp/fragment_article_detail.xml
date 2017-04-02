@@ -15,58 +15,57 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/detail_appbar_height">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/photo"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_appbar_height"
+                android:elevation="@dimen/toolbar_elevation">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/detail_appbar_height"
-                    android:elevation="@dimen/toolbar_elevation">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="24dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:gravity="bottom"
+                        android:orientation="vertical">
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/article_title"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:gravity="bottom"
-                            android:layout_marginLeft="4dp"
-                            android:layout_marginRight="8dp"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/detail_body_vert_margin"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="sans-serif-condensed"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/detail_title_text_size"
+                            android:textColor="@android:color/white"
+                            android:lineSpacingMultiplier="0.9" />
 
-                            <TextView
-                                android:id="@+id/article_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/detail_body_vert_margin"
-                                android:layout_marginBottom="4dp"
-                                android:fontFamily="sans-serif-condensed"
-                                android:textStyle="bold"
-                                android:textSize="@dimen/detail_title_text_size"
-                                android:textColor="@android:color/white"
-                                android:lineSpacingMultiplier="0.9" />
+                        <TextView
+                            android:id="@+id/article_byline"
+                            android:paddingTop="@dimen/byline_paddingTop"
+                            android:paddingBottom="@dimen/byline_paddingBottom"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/detail_byline_text_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
-                            <TextView
-                                android:id="@+id/article_byline"
-                                android:paddingTop="@dimen/byline_paddingTop"
-                                android:paddingBottom="@dimen/byline_paddingBottom"
-                                android:textSize="@dimen/detail_byline_text_size"
-                                android:textColor="@android:color/white"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
-
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/toolbar_image"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"/>
                     </LinearLayout>
 
-                </android.support.v7.widget.Toolbar>
+                    <ImageView
+                        android:id="@+id/toolbar_image"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"/>
+                </LinearLayout>
 
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
         <com.example.xyzreader.ui.ObservableScrollView
@@ -81,17 +80,16 @@
                     android:id="@+id/article_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_body_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_body_horiz_margin"
                     android:layout_marginTop="@dimen/detail_body_vert_margin"
                     android:layout_marginBottom="@dimen/detail_body_vert_margin"
+                    android:layout_marginLeft="@dimen/detail_body_horiz_margin"
+                    android:layout_marginRight="@dimen/detail_body_horiz_margin"
                     android:textColor="@android:color/black"
                     android:textColorLink="@color/accent"
                     android:textSize="@dimen/detail_body_text_size"
                     android:paddingTop="10dp"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
             </LinearLayout>
-
         </com.example.xyzreader.ui.ObservableScrollView>
     </LinearLayout>
 

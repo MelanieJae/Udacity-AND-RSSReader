@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -12,9 +13,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -23,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -49,11 +51,11 @@ public class ArticleDetailFragment extends Fragment implements
     private ObservableScrollView mScrollView;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private ColorDrawable mStatusBarColorDrawable;
-    private ImageButton fab;
+    private FloatingActionButton fab;
 
     private int mTopInset;
     private View mPhotoContainerView;
-    private Toolbar mPhotoView;
+    private ImageView mPhotoView;
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
@@ -109,8 +111,8 @@ public class ArticleDetailFragment extends Fragment implements
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
-        mPhotoView = (Toolbar) mRootView.findViewById(R.id.photo);
-        fab = (ImageButton)mRootView.findViewById(R.id.share_fab);
+        mPhotoView = (ImageView) mRootView.findViewById(R.id.toolbar_image);
+        fab = (FloatingActionButton)mRootView.findViewById(R.id.share_fab);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
@@ -190,9 +192,8 @@ public class ArticleDetailFragment extends Fragment implements
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
-                                titleView.setTextColor(p.getDarkVibrantColor(12));
-                                bylineView.setTextColor(p.getDarkVibrantColor(12));
-                                mPhotoView.setBackground
+                                fab.setBackgroundTintList(ColorStateList.valueOf(p.getDarkVibrantColor(12)));
+                                mPhotoView.setImageDrawable
                                         (new BitmapDrawable(getResources(), bitmap));
                                 mRootView.findViewById(R.id.meta_bar)
                                         .setBackgroundColor(mMutedColor);
