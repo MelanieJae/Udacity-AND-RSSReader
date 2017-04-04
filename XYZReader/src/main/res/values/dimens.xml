@@ -19,8 +19,9 @@
     <dimen name="nav_up_btn_top_margin">30dp</dimen>
     <dimen name="nav_up_btn_width">56dp</dimen>
     <dimen name="nav_up_btn_height">56dp</dimen>
-    <dimen name="fab_width">56dp</dimen>
-    <dimen name="fab_height">56dp</dimen>
+    <dimen name="fab_width">48dp</dimen>
+    <dimen name="fab_height">48dp</dimen>
+    <dimen name="article_title_width">200dp</dimen>
     <dimen name="detail_photo_height">304dp</dimen>
     <dimen name="detail_card_top_margin">@dimen/detail_photo_height</dimen>
     <dimen name="detail_body_horiz_margin">16dp</dimen>
@@ -36,11 +37,8 @@
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
     <dimen name="list_appbar_height">112dp</dimen>
     <dimen name="detail_appbar_height">200dp</dimen>
-    <dimen name="fab_elevation">2dp</dimen>
     <dimen name="toolbar_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
-    <dimen name="fab_margin_horizontal">24dp</dimen>
-    <dimen name="fab_margin_vertical">8dp</dimen>
     <dimen name="fab_margin">12dp</dimen>
     <dimen name="byline_paddingTop">6dp</dimen>
     <dimen name="byline_paddingBottom">6dp</dimen>

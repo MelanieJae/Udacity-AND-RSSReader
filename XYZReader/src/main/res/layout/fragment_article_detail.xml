@@ -36,7 +36,7 @@
 
                             <TextView
                                 android:id="@+id/article_title"
-                                android:layout_width="wrap_content"
+                                android:layout_width="@dimen/article_title_width"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/detail_body_vert_margin"
                                 android:layout_marginBottom="4dp"
@@ -59,7 +59,7 @@
 
                         <ImageView
                             android:id="@+id/toolbar_image"
-                            android:layout_weight="1"
+                            android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"/>
@@ -101,10 +101,7 @@
         android:layout_height="@dimen/fab_height"
         android:src="@drawable/ic_share"
         android:layout_gravity="bottom|end"
-        android:layout_marginTop="@dimen/fab_margin_vertical"
-        android:layout_marginBottom="@dimen/fab_margin_vertical"
-        android:layout_marginLeft="@dimen/fab_margin_vertical"
-        android:layout_marginRight="@dimen/fab_margin_vertical"
+        android:layout_margin="@dimen/fab_margin"
         android:elevation="@dimen/fab_elevation"/>
 
 </android.support.design.widget.CoordinatorLayout>
