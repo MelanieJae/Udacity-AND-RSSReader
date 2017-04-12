@@ -42,7 +42,6 @@ public class ArticleDetailFragment extends Fragment implements
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
-    private static final float PARALLAX_FACTOR = 1.25f;
 
     private Cursor mCursor;
     private long mItemId;
@@ -192,6 +191,8 @@ public class ArticleDetailFragment extends Fragment implements
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
+                                titleView.setTextColor(p.getDarkVibrantColor(12));
+                                bylineView.setTextColor(p.getDarkVibrantColor(12));
                                 fab.setBackgroundTintList(ColorStateList.valueOf(p.getDarkVibrantColor(12)));
                                 mPhotoView.setImageDrawable
                                         (new BitmapDrawable(getResources(), bitmap));

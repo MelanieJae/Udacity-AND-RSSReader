@@ -33,9 +33,6 @@ public class ObservableScrollView extends ScrollView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-//        if (mCallbacks != null) {
-//            mCallbacks.onScrollChanged();
-//        }
     }
 
     @Override
@@ -53,11 +50,7 @@ public class ObservableScrollView extends ScrollView {
         return super.computeVerticalScrollRange();
     }
 
-    public void setCallbacks(Callbacks listener) {
-        mCallbacks = listener;
-    }
-
-    public static interface Callbacks {
-        public void onScrollChanged();
+    public interface Callbacks {
+        void onScrollChanged();
     }
 }
